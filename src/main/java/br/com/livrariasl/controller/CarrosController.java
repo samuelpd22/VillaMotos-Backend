@@ -16,8 +16,6 @@ import java.util.List;
 @RestController
 public class CarrosController {
 
-    @Autowired
-    private CarrosRepository carrosRepository;
 
     @Autowired
     private CarrosService carrosService;
@@ -55,7 +53,7 @@ public class CarrosController {
 
     @GetMapping("/marca/{marca}")
     public List<CarrosEntity> buscarLivrosPorGenero(@PathVariable Marca marca) {
-        return carrosRepository.findByMarca(marca);
+        return carrosService.buscarPorMarca(String.valueOf(marca));
     }
 
 

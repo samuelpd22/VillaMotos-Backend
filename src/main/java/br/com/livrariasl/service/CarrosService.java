@@ -2,6 +2,7 @@ package br.com.livrariasl.service;
 
 import br.com.livrariasl.dto.CarrosDTO;
 import br.com.livrariasl.entity.CarrosEntity;
+import br.com.livrariasl.entity.Marca;
 import br.com.livrariasl.repository.CarrosRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,10 @@ public class CarrosService {
     public String apagarLivro(Long id){
         carrosRepository.deleteById(id);
         return "Carro apagado com sucesso";
+    }
+
+    public List<CarrosEntity> buscarPorMarca(String marca){
+        return  carrosRepository.findByMarca(Marca.valueOf(marca));
     }
 
 }
