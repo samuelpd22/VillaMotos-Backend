@@ -4,7 +4,8 @@ public enum Marca {
 
     YAMAHA,
     HONDA,
-    HYUNDAI
+    HYUNDAI,
+    KAWASAKI
 
 }
 
